@@ -111,7 +111,7 @@ export default function Header() {
                     </a>
                 </Popover.Group>
                 <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-                <Link to={`/login`}>
+                <Link to={`/SignUp`}>
                     <a href="#" 
                     className="border-1 border-slate-300 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-btn-primary px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-yellow-500"
                     >
@@ -192,7 +192,7 @@ export default function Header() {
                     ))}
                     </div>
                     <div>
-                    <Link to={`/login`}>
+                    <Link to={`/SignUp`}>
                         <a
                             href="#"
                             className="flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-yellow-700"

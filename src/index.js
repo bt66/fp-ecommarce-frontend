@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 // import pages
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
-
+import SignUp from './pages/SignUp';
 import ErrorPage from './pages/ErrorPage';
 
 import {
@@ -24,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/SignUp",
+    element: <SignUp />,
     errorElement: <ErrorPage />,
   },
 ]);
