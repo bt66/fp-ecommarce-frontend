@@ -14,7 +14,6 @@ import {
 
 
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Outlet, Link } from "react-router-dom";
 
 const solutions = [
@@ -76,7 +75,7 @@ function classNames(...classes) {
 
 export default function Header() {
     return (
-        <Popover className="relative bg-default-dark bg-opacity-0">
+        <Popover className="sticky bg-default-dark bg-opacity-0">
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
                 <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -193,18 +192,22 @@ export default function Header() {
                     ))}
                     </div>
                     <div>
-                    <a
-                        href="#"
-                        className="flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-yellow-700"
-                    >
-                        Sign up
-                    </a>
-                    <p className="mt-6 text-center text-base font-medium text-gray-500">
-                        Existing customer?{' '}
-                        <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                        Sign in
+                    <Link to={`/login`}>
+                        <a
+                            href="#"
+                            className="flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-yellow-700"
+                        >
+                            Sign up
                         </a>
-                    </p>
+                    </Link>
+                    <Link to={`/login`}>
+                        <p className="mt-6 text-center text-base font-medium text-gray-500">
+                            Existing customer?{' '}
+                            <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                            Sign in
+                            </a>
+                        </p>
+                    </Link>
                     </div>
                 </div>
                 </div>
