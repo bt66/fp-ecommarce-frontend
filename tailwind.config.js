@@ -16,6 +16,9 @@ module.exports = {
         'grey' : '#2F2F2F',
         'divider' : '#575757',
         'secondary-grey' : '#D9D9D9'
+      },
+      height: {
+        '128': '32rem',
       }
     },
   },

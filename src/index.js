@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import SignUp from './pages/SignUp';
+import HelpDesk from './pages/HelpDesk';
 import ErrorPage from './pages/ErrorPage';
 
 import {
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
   {
     path: "/SignUp",
     element: <SignUp />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/HelpDesk",
+    element: <HelpDesk />,
     errorElement: <ErrorPage />,
   },
 ]);

@@ -15,8 +15,8 @@ import { Outlet, Link } from "react-router-dom";
 function Home() {
   return (
     <div className='relative bg-black text-white'>
+      <Header/>
       <div className='z-50 sticky inset-x-0'>
-        <Header/>
       </div>
       <div className='bg-red-500 relative '>
         <div className='text-white absolute w-full h-full'>

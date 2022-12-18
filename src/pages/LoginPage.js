@@ -34,7 +34,7 @@ function LoginPage() {
                             <div className='flex flex-col justify-center items-center'>
                                 <input type="email" name="text" placeholder='Username' className='px-3 mt-4 py-2 rounded-full w-11/12'/>
                                 <input type="password" name="Password" placeholder='Password' className='px-3 mt-4 py-2 rounded-full w-11/12'/>
-                                <p className='text-white mt-6'>Don't have account? Register <Link ><span><u>here</u></span></Link></p>
+                                <p className='text-white mt-6'>Don't have account? Register <Link to={'/SignUp'}><span><u>here</u></span></Link></p>
                                 <input type="submit" value="Submit" className='bg-primary-color text-black  px-3 py-2 w-1/2 rounded mt-9'></input>
                             </div>
                         </form>

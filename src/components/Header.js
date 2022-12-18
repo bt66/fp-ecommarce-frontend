@@ -14,6 +14,7 @@ import {
 
 
 } from '@heroicons/react/24/outline'
+import LogoSubmitMusik from '../assets/LOGO.svg'
 import { Outlet, Link } from "react-router-dom";
 
 const solutions = [
@@ -21,24 +22,28 @@ const solutions = [
     name: 'Home',
     description: 'Get a better understanding of where your traffic is coming from.',
     href: '#',
+    Link: '/',
     icon: HomeIcon,
     },
     {
-    name: 'Shopping',
+    name: 'Upload',
     description: 'Speak directly to your customers in a more meaningful way.',
     href: '#',
+    Link: '/Upload',
     icon: ShoppingBagIcon,
     },
     {
-    name: 'Suze Guide',
+    name: 'Pricing',
     description: "Connect with third-party tools that you're already using.",
     href: '#',
+    Link: '/Pricing',
     icon: ScaleIcon,
     },
     {
-    name: 'About Me',
+    name: 'Help Desk',
     description: 'Build strategic funnels that will drive your customers to convert',
     href: '#',
+    Link: '/HelpDesk',
     icon: QuestionMarkCircleIcon,
     },
 ]
@@ -63,11 +68,11 @@ const resources = [
     },
     { name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
 ]
-const recentPosts = [
-    { id: 1, name: 'Boost your conversion rate', href: '#' },
-    { id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
-    { id: 3, name: 'Improve your customer experience', href: '#' },
-]
+// const recentPosts = [
+//     { id: 1, name: 'Boost your conversion rate', href: '#' },
+//     { id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
+//     { id: 3, name: 'Improve your customer experience', href: '#' },
+// ]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -75,59 +80,48 @@ function classNames(...classes) {
 
 export default function Header() {
     return (
-        <Popover className="sticky bg-default-dark bg-opacity-0">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
-                <div className="flex justify-start lg:w-0 lg:flex-1">
-                    <a href="#">
-                        <span className="sr-only">SubmitMusic</span>
-                        <img
-                        className="h-8 w-auto sm:h-10"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=color-primary&shade=600"
-                        alt=""
-                        />
-                    </a>
-                </div>
-                <div className="-my-2 -mr-2 md:hidden">
-                <Popover.Button className="inline-flex items-center justify-center rounded-md bg-default-dark p-2 text-gray-400 hover:default-dark hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span className="sr-only">Open menu</span>
-                    <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-                </Popover.Button>
-                </div>
-                <Popover.Group as="nav" className="hidden space-x-10 md:flex">
-                    <Link to={`/`}>
-                        <a className="text-base font-medium text-white hover:text-white">
-                            Home
+        <Popover className="sticky bg-default-dark bg-opacity-0 top-0 z-10">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+                <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
+                    <div className="flex justify-start lg:w-0 lg:flex-1">
+                        <a href="#">
+                            <span className="sr-only">SubmitMusic</span>
+                            <img
+                            className="h-8 w-auto sm:h-10"
+                            src={LogoSubmitMusik}
+                            alt=""
+                            />
                         </a>
-                    </Link>
-                    <a href="#" className="text-base font-medium text-white hover:text-white">
-                        Shopping
-                    </a>
-                    <a href="#" className="text-base font-medium text-white hover:text-white">
-                        Size Guide
-                    </a>
-                    <a href="#" className="text-base font-medium text-white hover:text-white">
-                        About
-                    </a>
-                </Popover.Group>
-                <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-                <Link to={`/SignUp`}>
-                    <a href="#" 
-                    className="border-1 border-slate-300 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-btn-primary px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-yellow-500"
-                    >
-                        Sign in
-                    </a>
-                </Link>
-                <Link to={`/login`}>
-                    <a
-                        href="#"
-                        className="border-2 ml-8 border-slate-300 px-4 py-2 rounded-md whitespace-nowrap text-base font-medium text-white hover:text-white hover:border-slate-400"    
-                    >
-                        Login
-                    </a>
-                </Link>
+                    </div>
+                    <div className="-my-2 -mr-2 md:hidden">
+                        <Popover.Button className="inline-flex items-center justify-center rounded-md bg-default-dark p-2 text-gray-400 hover:default-dark hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                            <span className="sr-only">Open menu</span>
+                            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                        </Popover.Button>
+                    </div>
+                    <Popover.Group as="nav" className="hidden space-x-10 md:flex">
+                        <Link to={`/`} className="text-base font-medium text-white hover:text-white">
+                            Home
+                        </Link>
+                        <a href="#" className="text-base font-medium text-white hover:text-white">
+                            Upload
+                        </a>
+                        <a href="#" className="text-base font-medium text-white hover:text-white">
+                            Pricing
+                        </a>
+                        <Link to={`/HelpDesk`} className="text-base font-medium text-white hover:text-white">
+                            Help Desk
+                        </Link>
+                    </Popover.Group>
+                    <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+                        <Link to={`/SignUp`} className="border-1 border-slate-300 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-btn-primary px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-yellow-500">
+                                Sign in
+                        </Link>
+                        <Link to={`/login`} className="border-2 ml-8 border-slate-300 px-4 py-2 rounded-md whitespace-nowrap text-base font-medium text-white hover:text-white hover:border-slate-400">
+                            Login
+                        </Link>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <Transition
@@ -146,8 +140,8 @@ export default function Header() {
                     <div>
                         <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=white"
-                        alt="Your Company"
+                        src={LogoSubmitMusik}
+                        alt="Submit Mucik"
                         />
                     </div>
                     <div className="-mr-2">
@@ -160,14 +154,16 @@ export default function Header() {
                     <div className="mt-6">
                     <nav className="grid gap-y-8">
                         {solutions.map((item) => (
-                        <a
-                            key={item.name}
-                            href={item.href}
-                            className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
-                        >
-                            <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
-                            <span className="ml-3 text-base font-medium text-white">{item.name}</span>
-                        </a>
+                            <Link key={item.Link} to={item.Link}>
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
+                                >
+                                    <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
+                                    <span className="ml-3 text-base font-medium text-white">{item.name}</span>
+                                </a>
+                            </Link>
                         ))}
                     </nav>
                     </div>
