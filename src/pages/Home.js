@@ -4,6 +4,19 @@ import BackgroundPexcels from '../assets/pexels-wendy-wei-1916824.svg'
 import YoutubeMusicLogo from '../assets/YoutubeMusic.svg'
 import AppleMusicLogo from '../assets/AppleMusic.svg'
 import SpotifyLogo from '../assets/Spotify.svg'
+import DeezerLogo from "../assets/deezer.svg"
+import TiktokLogo from "../assets/Tiktok.svg"
+import RessoLogo from "../assets/Resso.svg"
+import SoundCloudLogo from "../assets/Soundcloud.svg"
+import ShazamLogo from "../assets/Shazam.svg"
+import JooxLogo from "../assets/Joox.svg"
+import MusicStoriesLogo from "../assets/MusicStories.svg"
+import AmazomMusicLogo from "../assets/amazonMusic.svg"
+import IhearRadioLogo from "../assets/iHeartRadio.svg"
+import TidalLogo from "../assets/tidal.svg"
+import LineMusicLogo from "../assets/line-music.svg"
+import QQLogo from "../assets/QQ.svg"
+
 import CheckIcon from '../assets/icon_Check.svg'
 import TimesIcon from '../assets/iconTimes.svg'
 import { Outlet, Link } from "react-router-dom";
@@ -11,6 +24,70 @@ import { Outlet, Link } from "react-router-dom";
 // import HandCraftIcon from '../assets/handCraft.svg'
 // import WarantyIcon from '../assets/waranty.svg'
 // import JeweleryIcon from '../assets/icon _Gem.svg'
+
+// const logoBrand = [
+//   {
+//     "alt": "ytmusicLogo",
+//     "src": YoutubeMusicLogo
+//   },
+//   {
+//     "alt": "AppleMusicLogo",
+//     "src": AppleMusicLogo
+//   },
+//   {
+//     "alt": "SpotifyLogo",
+//     "src": SpotifyLogo
+//   },
+//   {
+//     "alt": "DeezerLogo",
+//     "src": DeezerLogo
+//   },
+//   {
+//     "alt": "TiktokLogo",
+//     "src": TiktokLogo
+//   },
+//   {
+//     "alt": "RessoLogo",
+//     "src": RessoLogo
+//   },
+//   {
+//     "alt": "SoundCloudLogo",
+//     "src": SoundCloudLogo
+//   },
+//   {
+//     "alt": "ShazamLogo",
+//     "src": ShazamLogo
+//   },
+//   {
+//     "alt": "JooxLogo",
+//     "src": JooxLogo
+//   },
+//   {
+//     "alt": "MusicStoriesLogo",
+//     "src": MusicStoriesLogo
+//   },
+//   {
+//     "alt": "AmazomMusicLogo",
+//     "src": AmazomMusicLogo
+//   },
+//   {
+//     "alt": "IhearRadioLogo",
+//     "src": IhearRadioLogo
+//   },
+//   {
+//     "alt": "TidalLogo",
+//     "src": TidalLogo
+//   },
+//   {
+//     "alt": "LineMusicLogo",
+//     "src": LineMusicLogo
+//   },
+//   {
+//     "alt": "QQLogo",
+//     "src": QQLogo
+//   }
+// ]
+
 
 function Home() {
   return (
@@ -33,14 +110,52 @@ function Home() {
               </div>
 
               <div className='flex justify-between align-center bg-secondary-grey p-3 rounded-md bg-opacity-25 mt-60 hidden sm:flex'>
+                {/* {logoBrand.map((item) => {
+                  <div className='flex justify-center align-center'>
+                    <img src={item.src}></img>
+                  </div>
+                })} */}
                 <div className='flex justify-center align-center'>
-                  <img src={YoutubeMusicLogo}></img>
+                  <img src={YoutubeMusicLogo} alt="brandLogo"></img>
                 </div>
                 <div className='flex justify-center align-center'>
-                  <img  src={SpotifyLogo}></img>
+                  <img  src={AppleMusicLogo} alt="brandLogo"></img>
                 </div>
                 <div className='flex justify-center align-center'>
-                  <img src={AppleMusicLogo}></img>
+                  <img src={SpotifyLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={DeezerLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={TiktokLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={RessoLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={ShazamLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={JooxLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={MusicStoriesLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={AmazomMusicLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={IhearRadioLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={TidalLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={LineMusicLogo} alt="brandLogo"></img>
+                </div>
+                <div className='flex justify-center align-center'>
+                  <img src={QQLogo} alt="brandLogo"></img>
                 </div>
               </div>
             </div>

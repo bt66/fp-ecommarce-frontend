@@ -8,7 +8,9 @@ import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import SignUp from './pages/SignUp';
 import HelpDesk from './pages/HelpDesk';
+import UploadContent from './pages/UploadContent';
 import ErrorPage from './pages/ErrorPage';
+import UserDashboard from './pages/UserDashboard';
 
 import {
   createBrowserRouter,
@@ -35,6 +37,16 @@ const router = createBrowserRouter([
   {
     path: "/HelpDesk",
     element: <HelpDesk />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/Upload",
+    element: <UploadContent />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/userDashboard",
+    element: <UserDashboard />,
     errorElement: <ErrorPage />,
   },
 ]);
