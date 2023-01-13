@@ -15,7 +15,11 @@ module.exports = {
         'primary-color' :  '#C4EB12',
         'grey' : '#2F2F2F',
         'divider' : '#575757',
-        'secondary-grey' : '#D9D9D9'
+        'secondary-grey' : '#D9D9D9',
+        'base-grey' : '#2F2F2F',
+        'third-grey' : '#454545',
+        'fourth-grey' : '#5D5C5C',
+
       },
       height: {
         '128': '32rem',

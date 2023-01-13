@@ -29,7 +29,7 @@ const solutions = [
     name: 'Upload',
     description: 'Speak directly to your customers in a more meaningful way.',
     href: '#',
-    Link: '/Upload',
+    Link: '/userDashboard',
     icon: ShoppingBagIcon,
     },
     {
@@ -84,7 +84,6 @@ export default function Header() {
         event.preventDefault();
         localStorage.removeItem("token")
         navigate("/")
-
     }
     if(localStorage.getItem("token")== null || undefined){
         return (
@@ -111,7 +110,7 @@ export default function Header() {
                             <Link to={`/`} className="text-base font-medium text-white hover:text-white">
                                 Home
                             </Link>
-                            <Link to={'/upload'}>
+                            <Link to={'/login'}>
                                 <a href="#" className="text-base font-medium text-white hover:text-white">
                                     Upload
                                 </a>
@@ -246,7 +245,7 @@ export default function Header() {
                             <Link to={`/`} className="text-base font-medium text-white hover:text-white">
                                 Home
                             </Link>
-                            <Link to={'/upload'}>
+                            <Link to={'/userDashboard'}>
                                 <a href="#" className="text-base font-medium text-white hover:text-white">
                                     Upload
                                 </a>

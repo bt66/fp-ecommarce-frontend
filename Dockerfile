@@ -1,10 +1,10 @@
 FROM node:16.18.1-slim as build
 WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
+#ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 #RUN npm ci --silent
-RUN npm install
+RUN npm install --legacy-peer-deps
 COPY . ./
 RUN npm run build
 

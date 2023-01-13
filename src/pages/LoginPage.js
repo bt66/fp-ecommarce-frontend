@@ -28,7 +28,7 @@ function LoginPage() {
         event.preventDefault();
         console.log(userData)
         loadingRef.current.classList.remove('hidden')
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, {
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/login`, {
             email: `${userData.email}`,
             password: `${userData.password}`
         },
@@ -42,13 +42,17 @@ function LoginPage() {
             localStorage.setItem('token', resp.data.token);
             addNotification({
                 title: 'Success',
-                subtitle: 'Register success',
+                subtitle: 'Login Success',
                 message: 'You will be redirect to Dashboard ...',
                 theme: 'darkgreen',
                 native: false // when using native, your OS will handle theming.
             })
             setTimeout((()=> {
-                navigate('/Upload');
+                if(resp.data.body.role == "admin") {
+                    navigate('/admin')
+                }else {
+                    navigate('/userDashboard');
+                }
             }), 1000);
         })).catch((error) => {
             loadingRef.current.classList.add('hidden')

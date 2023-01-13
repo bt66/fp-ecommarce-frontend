@@ -8,9 +8,14 @@ import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import SignUp from './pages/SignUp';
 import HelpDesk from './pages/HelpDesk';
-import UploadContent from './pages/UploadContent';
 import ErrorPage from './pages/ErrorPage';
 import UserDashboard from './pages/UserDashboard';
+import NewRelease from './pages/NewRelease';
+import Upload from './pages/Upload';
+import Coba from './pages/Coba.js';
+import Payment from './pages/Payment';
+import AdminPage from './pages/admin/AdminPage';
+import AdminUserContent from './pages/admin/AdminUserContent';
 
 import {
   createBrowserRouter,
@@ -40,24 +45,49 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/Upload",
-    element: <UploadContent />,
-    errorElement: <ErrorPage />,
-  },
-  {
     path: "/userDashboard",
     element: <UserDashboard />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: "/NewRelease",
+    element: <NewRelease />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/Upload",
+    element: <Upload />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/test",
+    element: <Coba />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/payment",
+    element: <Payment />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/admin",
+    element: <AdminPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/adminUserContent/:idUser",
+    element: <AdminUserContent />,
+    errorElement: <ErrorPage />,
+  }
 ]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-    {/* <App /> */}
-  </React.StrictMode>
+  <RouterProvider router={router} />
+  // <React.StrictMode>
+  //   <App /> 
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

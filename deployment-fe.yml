@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-fpecommarce
+  namespace: pr
+spec:
+  selector:
+    matchLabels:
+      run: frontend-fpecommarce
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: frontend-fpecommarce
+    spec:
+      containers:
+        - name: frontend-fpecommarce
+          image: registry.carakan.id/belajar/ecommarce-frontend:v0.5
+          ports:
+            - containerPort: 80
+          env:
+            - name: REACT_APP_BACKEND_URL
+              value: https://backend-fpecommarce.tranto.tk
+      imagePullSecrets:
+        - name: registry-carakan
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-fpecommarce-service
+  namespace: pr
+spec:
+  # type: NodePort
+  selector:
+    run: frontend-fpecommarce
+  ports:
+    - port: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-fe-ecommarce
+  namespace: pr
+spec:
+  tls:
+    - hosts:
+        - submitmusik.my.id
+      secretName: submitmusik-cert
+  rules:
+    - host: submitmusik.my.id
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-fpecommarce-service
+                port:
+                  number: 80
+  ingressClassName: nginx

@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import axios from "axios";
 import { Notifications } from 'react-push-notification';
 import addNotification from 'react-push-notification';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
 
 function SignUp() {
@@ -11,7 +11,7 @@ function SignUp() {
     const [userData, setUserData] = useState({
         firstName: "",
         lastName: "",
-        username: "",
+        userName: "",
         email: "",
         password: ""
     })
@@ -28,11 +28,8 @@ function SignUp() {
         event.preventDefault();
         console.log(userData);
         
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-            username: `${userData.username}`,
-            password: `${userData.password}`,
-            email: `${userData.email}`
-        },
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/signup`, 
+        userData,
         {
             headers: {
                 'Content-Type': 'application/json'
@@ -97,9 +94,9 @@ function SignUp() {
                             <div className='flex flex-col justify-center items-center'>
                                 <input 
                                     type="text" 
-                                    name="username" 
+                                    name="userName" 
                                     placeholder='Username'
-                                    value={userData.username}
+                                    value={userData.userName}
                                     onChange={handleInputChange}
                                     className='px-3 mt-4 py-2 rounded-full w-11/12'/>
                                 <input 
@@ -116,6 +113,9 @@ function SignUp() {
                                     value={userData.password}
                                     onChange={handleInputChange}
                                     className='px-3 mt-4 py-2 rounded-full w-11/12'/>
+                                    <Link to="/login">
+                                        <h2 className='mt-5 text-white'>Already have account? <span className='text-primary-color'>Login</span></h2>
+                                    </Link>
                                 <input 
                                     type="submit" 
                                     value="Submit" 
